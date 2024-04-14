@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-basic',
+  selector: 'app-control-flow',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './basic.component.html',
-  styleUrl: './basic.component.scss'
+  templateUrl: './control-flow.component.html',
+  styleUrl: './control-flow.component.scss'
 })
-export class BasicComponent {
+export class ControlFlowComponent {
   name = 'Angular';
   color = '';
   showHello: boolean = false;
@@ -20,6 +20,7 @@ export class BasicComponent {
     { id: 3, name: "Angular Forms In Depth" },
   ];
   items = ['angular'];
+  value = 1;
 
 
   trackCourse(index: number, course: Course) {

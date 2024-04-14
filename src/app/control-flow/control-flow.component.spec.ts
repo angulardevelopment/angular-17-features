@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BasicComponent } from './basic.component';
+import { ControlFlowComponent } from './control-flow.component';
 
-describe('BasicComponent', () => {
-  let component: BasicComponent;
-  let fixture: ComponentFixture<BasicComponent>;
+describe('ControlFlowComponent', () => {
+  let component: ControlFlowComponent;
+  let fixture: ComponentFixture<ControlFlowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BasicComponent]
+      imports: [ControlFlowComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(BasicComponent);
+    fixture = TestBed.createComponent(ControlFlowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
