@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LargeComponent } from '../large/large.component';
 
 @Component({
   selector: 'app-control-flow',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LargeComponent],
   templateUrl: './control-flow.component.html',
   styleUrl: './control-flow.component.scss'
 })
