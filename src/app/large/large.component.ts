@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [
     CommonModule,
   ],
-  template: `<p>large works!</p>`,
+  template: `<p>large works! Used to show demo of defer loading</p>`,
   styleUrl: './large.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
