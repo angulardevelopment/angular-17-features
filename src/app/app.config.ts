@@ -7,12 +7,12 @@ import { provideHttpClient, withXsrfConfiguration } from '@angular/common/http';
 export const appConfig: ApplicationConfig = {
 
 
-  // providers: [provideRouter(routes), provideHttpClient()]
+  // providers: [, provideHttpClient()]
   // provideHttpClient(withJsonpSupport()
   providers: [provideHttpClient(withXsrfConfiguration({
     cookieName: 'TOKEN', // default is 'XSRF-TOKEN'
     headerName: 'X-TOKEN' // default is 'X-XSRF-TOKEN'
-    }))]
+    })), provideRouter(routes)]
 // or you can disable it completely with withNoXsrfProtection():
 // providers: [provideHttpClient(withNoXsrfProtection())]
 };

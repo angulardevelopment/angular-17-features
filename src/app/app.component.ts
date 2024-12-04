@@ -11,5 +11,7 @@ import { ControlFlowComponent } from './control-flow/control-flow.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-17-features';
+  ngOnInit(){
+    console.log(this)
+  }
 }
