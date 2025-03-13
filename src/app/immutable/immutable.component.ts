@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import update from 'immutability-helper';
 
 @Component({
   selector: 'app-immutable',
@@ -9,9 +10,8 @@ import { Component } from '@angular/core';
 })
 export class ImmutableComponent {
 
-}
-Example-
 
+objUpdate(){
 const pizzas = {
 margherita: {
 toppings: ['tomato sauce', 'mozzarella cheese'],
@@ -34,6 +34,8 @@ let pizzasCopy = {...pizzas}; //some issue in copying
 let pizzasCopy2 = Object.assign({}, pizzas);
 pizzasCopy.margherita.prices.small = '5.50';
 console.log(pizzasCopy,pizzas);
-By using update method issue will resolved
+// By using update method issue will resolved
 const pizzasCopy3 = update(pizzas, { margherita: { prices: { small: { $set: '5.50' } } } });
 console.log(pizzasCopy3, pizzas);
+}
+}
