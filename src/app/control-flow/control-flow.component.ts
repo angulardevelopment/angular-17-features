@@ -22,6 +22,7 @@ export class ControlFlowComponent {
   ];
   items = ['angular'];
   value = 1;
+  isVisible = false;
 
 
   trackCourse(index: number, course: Course) {
