@@ -10,6 +10,6 @@ export const routes: Routes = [
   {path:'ControlFlowComponent', component: ControlFlowComponent},
   {path:'ImmutableComponent', component: ImmutableComponent},
   {path:'LargeComponent', component: LargeComponent},
-  {path:'SecurityComponent', component: SecurityComponent}
-
+  {path:'SecurityComponent', component: SecurityComponent},
+  {path:'DemoComponent', loadComponent: () => import('./demo/demo.component').then(m => m.DemoComponent) },
 ];
