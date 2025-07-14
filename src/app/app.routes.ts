@@ -4,6 +4,7 @@ import { ControlFlowComponent } from './control-flow/control-flow.component';
 import { ImmutableComponent } from './immutable/immutable.component';
 import { LargeComponent } from './large/large.component';
 import { SecurityComponent } from './security/security.component';
+import { HomeComponent } from './Directive-Composition/home/home.component';
 
 export const routes: Routes = [
   {path:'PerfComponent', component: PerfComponent},
@@ -12,4 +13,5 @@ export const routes: Routes = [
   {path:'LargeComponent', component: LargeComponent},
   {path:'SecurityComponent', component: SecurityComponent},
   {path:'DemoComponent', loadComponent: () => import('./demo/demo.component').then(m => m.DemoComponent) },
+  {path:'HomeComponent', component: HomeComponent},
 ];

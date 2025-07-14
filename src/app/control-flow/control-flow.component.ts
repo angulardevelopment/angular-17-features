@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { LargeComponent } from '../large/large.component';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'app-control-flow',
   standalone: true,
-  imports: [CommonModule, LargeComponent],
+  imports: [CommonModule, LargeComponent, SpinnerComponent],
   templateUrl: './control-flow.component.html',
   styleUrl: './control-flow.component.scss'
 })
@@ -23,7 +24,7 @@ export class ControlFlowComponent {
   items = ['angular'];
   value = 1;
   isVisible = false;
-
+isLoaded = true;
 
   trackCourse(index: number, course: Course) {
     return course.id;

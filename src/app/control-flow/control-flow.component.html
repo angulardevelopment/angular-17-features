@@ -90,42 +90,135 @@
 </div>
 
 <div *ngIf="true">
-  we can defer non-critical resources. it basically lazy load the things divide the imports in chunk.
-  when you click on that it will load the content.
+  <div>
+    <p>ssr part</p>
+      <!-- @defer (hydrate on viewport) {
+  shopping-cart/>
+} -->
+</div>
+  <!-- </div>
+  <div>
   @defer {
     <app-large/>
-  } @placeholder {
+  } @placeholder (minimum  500ms) {
     Placeholder
-  } @loading {
-    Loading...
+  } @loading (after 1000ms; minimum 1s) {
+    <img alt="loading..." src="assets/loading.gif" />
+    <app-spinner></app-spinner>
   } @error {
     Something went wrong :(
   }
-
-  @defer (on immediate) {
-    <!-- Content to be deferred -->
+</div>
+  <div #container>
+  @defer (on viewport(container)) {
+    Content to be deferred
   } @placeholder {
-    <!-- Content to display before deferred content is loaded -->
+    Content to display before deferred content is loaded
   } @loading {
-    <!-- Content to display while deferred content is loading -->
+    Content to display while deferred content is loading
   } @error {
-    <!-- Content to display if an error occurs during loading -->
+    Content to display if an error occurs during loading
   }
-  triggers:
-  on viewport: Loads the content when it enters the viewport.
-on interaction: Loads the content when the user interacts with an element (e.g., click, hover).
-on timer: Loads the content after a specified delay.
-on idle: Loads the content when the browser is idle.
-on immediate: Loads the content as soon as possible.
+  </div>
 
-e.g when you import the directive, pipe, component it will divide them into chunks and load them when you need them.
+   <div>
+  @defer (on immediate) {
+    Content to be deferred
+  } @placeholder {
+    Content to display before deferred content is loaded
+  } @loading {
+    Content to display while deferred content is loading
+  } @error {
+    Content to display if an error occurs during loading
+  }
+  </div>
+
+     <div>
+      <div #greeting>Hello!</div>
+  @defer (on interaction(greeting)) {
+    greetings-cmp
+    Content to be deferred
+  } @placeholder {
+    Content to display before deferred content is loaded
+  } @loading {
+    Content to display while deferred content is loading
+  } @error {
+    Content to display if an error occurs during loading
+  }
+  </div>
 
 
-<!-- 
-@defer (when isVisible) {
-  <my-cmp appFoo/>
-  {{ 'foo' | bar }}
-} -->
+         <div>
+  @defer (on timer(5s)) {
+    Content to be deferred
+  } @placeholder {
+    Content to display before deferred content is loaded
+  } @loading {
+    Content to display while deferred content is loading
+  } @error {
+    Content to display if an error occurs during loading
+  }
+  </div>
 
-<button (click)="isVisible = true">Load</button>
+     <div>
+  @defer (on idle) {
+    Content to be deferred
+  } @placeholder {
+    Content to display before deferred content is loaded
+  } @loading {
+    Content to display while deferred content is loading
+  } @error {
+    Content to display if an error occurs during loading
+  }
+  </div>
+
+   <div>
+    <div #greeting>Hello!</div>
+  @defer (on hover(greeting)) {
+    Content to be deferred
+  } @placeholder {
+    Content to display before deferred content is loaded
+  } @loading {
+    Content to display while deferred content is loading
+  } @error {
+    Content to display if an error occurs during loading
+  }
+  </div>
+   
+
+    <div>
+      <div #greeting>Hello!</div>
+  @defer (on timer(5s); on interaction(greeting)) {
+    Content to be deferred
+  } @placeholder (minimum 2s) {
+    Content to display before deferred content is loaded
+  } @loading {
+    Content to display while deferred content is loading
+  } @error {
+    Content to display if an error occurs during loading
+  }
+  </div>
+
+<div>
+@defer (when isVisible;) {
+    <p>Loaded</p>
+ heavy-chart.component
+} @placeholder {
+  <p>Chart is getting ready...</p>
+} @loading {
+  <div class="spinner"></div>
+} @error {
+  <p>Could not load chart.</p>
+}
+</div>
+
+<div  #container>
+@defer (on timer(2s); prefetch on viewport(container)) {
+  <p>Loaded</p>
+  {{ 'foo' | uppercase  }}
+}
+</div> -->
+
+<button (click)="isVisible = true">toggle block</button>
+
 </div>
