@@ -1,7 +1,8 @@
 import { Directive, Input, Renderer2, ElementRef, HostBinding, OnChanges, SimpleChanges } from '@angular/core';
 
 @Directive({
-  selector: '[appDisable]' // This will apply the directive to any element with the appDisable attribute
+  selector: '[appDisable]', // This will apply the directive to any element with the appDisable attribute
+  standalone: true,
 })
 export class DisableDirective implements OnChanges {
   @Input() appDisable: boolean = false;  // Input that will control whether the element is disabled

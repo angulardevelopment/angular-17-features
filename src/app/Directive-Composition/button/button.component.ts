@@ -10,7 +10,7 @@ import { Color } from '../color.enum';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  @Input() color: Color = Color.Primary;
+  @Input() color: string = Color.Primary;
   @Input() disableState = false;
 
   @HostBinding('class')
