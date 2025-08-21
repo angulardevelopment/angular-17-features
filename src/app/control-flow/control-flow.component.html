@@ -91,16 +91,16 @@
 
 <div *ngIf="true">
   <div>
-    <p>ssr part</p>
+    <!-- <p>ssr part</p> -->
       <!-- @defer (hydrate on viewport) {
   shopping-cart/>
 } -->
 </div>
-  <!-- </div>
-  <div>
+
+  <!-- <div>
   @defer {
     <app-large/>
-  } @placeholder (minimum  500ms) {
+  } @placeholder (minimum  5000ms) {
     Placeholder
   } @loading (after 1000ms; minimum 1s) {
     <img alt="loading..." src="assets/loading.gif" />
@@ -108,32 +108,33 @@
   } @error {
     Something went wrong :(
   }
-</div>
-  <div #container>
+</div> -->
+    <!-- <div #container>
   @defer (on viewport(container)) {
-    Content to be deferred
+    defer viewport
   } @placeholder {
-    Content to display before deferred content is loaded
+    viewport placeholder
   } @loading {
-    Content to display while deferred content is loading
+    viewport loading  
   } @error {
-    Content to display if an error occurs during loading
+    viewport error
   }
-  </div>
+  </div> -->
 
-   <div>
+   <!-- <div>
   @defer (on immediate) {
-    Content to be deferred
+    defer immediate
   } @placeholder {
-    Content to display before deferred content is loaded
+    defer immediate placeholder
   } @loading {
-    Content to display while deferred content is loading
+     defer immediate loading
   } @error {
-    Content to display if an error occurs during loading
-  }
-  </div>
+         defer immediate error
 
-     <div>
+  }
+  </div> -->
+
+    <div>
       <div #greeting>Hello!</div>
   @defer (on interaction(greeting)) {
     greetings-cmp
@@ -148,7 +149,7 @@
   </div>
 
 
-         <div>
+          <!-- <div>
   @defer (on timer(5s)) {
     Content to be deferred
   } @placeholder {
@@ -210,15 +211,15 @@
 } @error {
   <p>Could not load chart.</p>
 }
-</div>
+</div> -->
 
 <div  #container>
 @defer (on timer(2s); prefetch on viewport(container)) {
   <p>Loaded</p>
   {{ 'foo' | uppercase  }}
 }
-</div> -->
+</div>
 
-<button (click)="isVisible = true">toggle block</button>
+<!-- <button (click)="isVisible = true">toggle block</button> -->
 
 </div>
